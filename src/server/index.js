@@ -25,9 +25,5 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 });
 
-var textapi = new meaningCloud({
-    application_key: process.env.API_KEY
- }); 
-
- // Below: just a test - remove when no longer needed
+// Below: just a test - remove when no longer needed
 console.log(`Your API key is ${process.env.API_KEY}`);
