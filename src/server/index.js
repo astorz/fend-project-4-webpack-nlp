@@ -1,6 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const fetch = require('node-fetch');
+
 var path = require('path')
 const express = require('express');
 const mockAPIResponse = require('./mockAPI.js');
@@ -8,6 +10,15 @@ const mockAPIResponse = require('./mockAPI.js');
 const app = express();
 
 app.use(express.static('dist'));
+
+//install cors
+const cors = require('cors');
+app.use(cors());
+
+//install bodyparser
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 console.log(__dirname);
 
@@ -25,5 +36,14 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 });
 
-// Below: just a test - remove when no longer needed
-console.log(`Your API key is ${process.env.API_KEY}`);
+app.post('/sentiment', async (req, res) => {
+    const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?';
+    const myUrl = `${baseURL}key=${process.env.API_KEY}&lang=auto&url=${req.body.formText}`;
+    const apiResponse = await fetch(myUrl, {method: 'POST'});
+    try {
+        const data = await apiResponse.json();
+        res.send(data);
+    } catch (error) {
+        console.log('error', error)
+    }
+});
