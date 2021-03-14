@@ -10,3 +10,21 @@ input {
     line-height: 16px;
     margin: 10px 0;
 }
+
+#submit {
+    color: silver;
+    background-color: blue;
+    width: auto;
+    margin: auto;
+    display: block;
+    border: none;
+    border-radius: 2.5px;
+    font-size: 18px;
+    font-family: Tahoma;
+    padding: 10px 25px;
+    box-shadow: 8px 4px 12px rgba(0, 0, 0, .5);
+}
+
+#results {
+    text-transform: lowercase;
+}

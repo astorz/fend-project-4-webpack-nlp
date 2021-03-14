@@ -2,36 +2,41 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>NPL App</title>
+        <title>NLP App</title>
     </head>
 
     <body>
-
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
+            <h1>Sentiment Analysis</h1>
+            <div id="header_box">
+                <h2>powered by</h2>
+                <a id="logo" href="https://www.meaningcloud.com/" target= "_blank" rel="noreferrer noopener">
+                    <img src="https://www.meaningcloud.com/wp-content/uploads/2015/09/LogoMeaningCloud650x264.png"/>
+                </a>
             </div>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter article URL ...">
+                    <input id="submit" type="submit" name="" value="Analyze" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <strong>Results of Sentiment Analysis:</strong>
+                <div id="results">
+
+                </div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <img src="https://lh3.googleusercontent.com/proxy/Zx5tgJ03Zp3XGPWmZeqWgGg5RN8r3R8xlarFz1iN_-U38TkNO3kkMmAFnbtTHhlxyc3z-dBh-hpy0he3X0Ez0q8AnQZg6HKdGED1it--Y3yvcMkS_iykwNkZPrDCFx_fbDHiz4hG" id="copyright-symbol"/>
+            <p>
+                Created by <a href="https://github.com/astorz/" target= "_blank" rel="noreferrer noopener">Andreas Storz</a>
+            </p>
         </footer>
 
     </body>
