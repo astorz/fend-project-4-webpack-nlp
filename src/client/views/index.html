@@ -18,16 +18,22 @@
 
         <main>
             <section>
+                <p id="instructions"> This web app allows you to apply sentiment analysis to an article on the web. <br> Paste the article URL into the box, results are displayed below.
+                    Be sure to provide a valid URL. Language must be English. 
+                </p>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter article URL ...">
+                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter article URL ..." required>
                     <input id="submit" type="submit" name="" value="Analyze" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
-            <section>
-                <strong>Results of Sentiment Analysis:</strong>
+            <section id="results-section">
+                <h3>Your Results:</h3>
                 <div id="results">
-
+                    <p class="sentimentResults" id="results-polarity"></p>
+                    <p class="sentimentResults" id="results-irony"></p>
+                    <p class="sentimentResults" id="results-subjectivity"></p>
+                    <p class="sentimentResults" id="results-confidence"></p>
                 </div>
             </section>
         </main>

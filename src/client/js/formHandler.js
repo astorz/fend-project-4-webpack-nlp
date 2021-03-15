@@ -1,8 +1,13 @@
 function handleSubmit(event) {
     event.preventDefault()
 
+    document.getElementById('results-section').style.display = 'none';
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
+    let formText = document.getElementById('name').value;
+    if (formText=="") {
+        alert("No URL provided");
+        return;
+    }
     Client.checkForName(formText) // added Client reference as described in 4.2
 
     // fetch('http://localhost:8081/test')
@@ -15,9 +20,12 @@ function handleSubmit(event) {
     })
     .then(res => res.json())
     .then(function(res) {
-        console.log(res);
-        // document.getElementById('results').innerHTML = `Polarity is ${polarity(res.score_tag)}`;
-        document.getElementById('results').innerHTML = res.subjectivity;
+        document.getElementById('results-polarity').innerHTML = `Polarity: ${polarity(res.score_tag)}`;
+        document.getElementById('results-irony').innerHTML = `Irony: ${res.irony}`;
+        document.getElementById('results-subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
+        document.getElementById('results-confidence').innerHTML = `Confidence: ${res.confidence}%`;
+        document.getElementById('results-section').style.display = 'inline';
+        console.log(res); // remove later
     })
 };
 
