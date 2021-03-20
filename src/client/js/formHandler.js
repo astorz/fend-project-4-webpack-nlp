@@ -13,7 +13,6 @@ function handleSubmit(event) {
         return;
     }
 
-    // fetch('http://localhost:8081/test')
     fetch('http://localhost:8081/sentiment', {
         method: 'POST',
         credentials: 'same-origin',
@@ -32,7 +31,6 @@ function handleSubmit(event) {
         document.getElementById('results-subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
         document.getElementById('results-confidence').innerHTML = `Confidence: ${res.confidence}%`;
         document.getElementById('results-section').style.display = 'inline';
-        console.log(res); // remove later
     })
 };
 
