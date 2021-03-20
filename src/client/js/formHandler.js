@@ -8,7 +8,10 @@ function handleSubmit(event) {
         alert("No URL provided");
         return;
     }
-    Client.checkForName(formText) // added Client reference as described in 4.2
+    if (!Client.validURL(formText)) {
+        alert("Not a valid URL!");
+        return;
+    }
 
     // fetch('http://localhost:8081/test')
     fetch('http://localhost:8081/sentiment', {
@@ -20,7 +23,7 @@ function handleSubmit(event) {
     })
     .then(res => res.json())
     .then(function(res) {
-        if(res.status.code=='212') {
+        if (res.status.code=='212') {
             alert("Sorry, we cannot analyze this article at this time. Please supply another URL");
             return;
         }
