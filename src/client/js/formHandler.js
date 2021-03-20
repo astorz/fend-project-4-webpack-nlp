@@ -20,6 +20,10 @@ function handleSubmit(event) {
     })
     .then(res => res.json())
     .then(function(res) {
+        if(res.status.code=='212') {
+            alert("Sorry, we cannot analyze this article at this time. Please supply another URL");
+            return;
+        }
         document.getElementById('results-polarity').innerHTML = `Polarity: ${polarity(res.score_tag)}`;
         document.getElementById('results-irony').innerHTML = `Irony: ${res.irony}`;
         document.getElementById('results-subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
