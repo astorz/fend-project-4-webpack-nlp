@@ -2,7 +2,7 @@ function handleSubmit(event) {
     event.preventDefault()
 
     document.getElementById('results-section').style.display = 'none';
-    // check what text was put into the form field
+
     let formText = document.getElementById('name').value;
     if (formText=="") {
         alert("No URL provided");
