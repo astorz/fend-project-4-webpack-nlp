@@ -15,9 +15,10 @@ const cors = require('cors');
 app.use(cors());
 
 // Loading bodyparser
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+// https://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4
 
 console.log(__dirname);
 

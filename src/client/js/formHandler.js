@@ -47,4 +47,5 @@ function polarity(score_tag) {
 };
 
 export { handleSubmit }
-export { polarity }
+export { polarity } 
+// Do I need to export helper functions? I.e., polarity?

@@ -2,6 +2,8 @@
   "name": "example-project",
   "version": "1.0.0",
   "main": "index.js",
+  // Index.js above should refer to the entry point
+  // See: https://bytearcher.com/articles/main-property-in-package.json-defines-entry-point/
   "scripts": {
     "test": "jest",
     "start": "node src/server/index.js",
